@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f2029">
+  <title>Portafolio — Maicol Salazar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="icon" href="assets/img/descarga.png">
+</head>
+<body class="theme-dark">
+  <!-- TOPBAR (solo la navbar) -->
+  <header class="topbar">
+    <nav class="navbar container">
+      <a class="navbar-brand" href="index.html">MS · Portafolio</a>
+      <div class="nav-links">
+        <a href="index.html">Inicio</a>
+        <a href="habilidades.html">Habilidades</a>
+        <a href="logros.html">Logros</a>
+        <a href="gustos.html">Gustos</a>
+        <a href="cv.html">CV</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- CONTENIDO -->
+  <main class="container">
+    <section class="hero card">
+      <img src="assets/img/maicol.jpeg" alt="Foto de perfil de Maicol Salazar">
+      <div>
+        <h1 class="title">Hola, soy Maicol Salazar</h1>
+        <p class="subtitle">
+          Estudiante de Ingeniería en Informática y técnico de soporte TI.
+          Desarrollo soluciones web (Flask / React), dashboards y automatizaciones.
+          Me apasiona la observabilidad, la optimización de procesos y la experiencia de usuario.
+        </p>
+
+        <!-- ÚNICO bloque de botones -->
+        <div class="actions">
+          <a class="btn btn-accent" href="habilidades.html">Ver habilidades</a>
+          <a class="btn-ghost info" href="logros.html">Logros</a>
+          <a class="btn-ghost" href="gustos.html">Gustos</a>
+          <a class="btn-ghost" href="cv.html">CV</a>
+        </div>
+
+        <hr class="hr-soft">
+
+        <div>
+          <span class="badge accent">Flask</span>
+          <span class="badge accent">Tailwind/Bootstrap</span>
+          <span class="badge">MySQL · MongoDB</span>
+          <span class="badge">Power BI / Chart.js</span>
+          <span class="badge">DevOps básico</span>
+        </div>
+
+        <div class="actions" style="margin-top:.4rem">
+          <a class="btn-ghost" href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn-ghost" href="https://github.com" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn-ghost" href="mailto:maicol.salazarcas@gmail.com">Correo</a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">Proyectos recientes</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>EcoWatt — Monitoreo de Energía</h3>
+          <p>SaaS de monitoreo para PyMEs y hogares con alertas, pronóstico (ARIMA) y paneles en tiempo real. Stack: Flask, MySQL/Mongo, Chart.js.</p>
+        </article>
+        <article class="card">
+          <h3>Portal AD — Consulta de expiración</h3>
+          <p>Aplicación interna para consultar vencimiento de cuentas de dominio por RUT, reduciendo tickets y mejorando SLA.</p>
+        </article>
+        <article class="card">
+          <h3>Scripts de Soporte</h3>
+          <p>Automatizaciones con PowerShell y Python para inventario, despliegues y diagnóstico de red.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER unificado -->
+  <footer>
+    © 2025 Maicol Salazar — 
+    <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

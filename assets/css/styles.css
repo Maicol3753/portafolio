@@ -1,0 +1,265 @@
+/* ===== Debe ir primero y una sola vez ===== */
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900');
+
+/* ===== Theme base ===== */
+:root{
+  --bg:#1f2029;
+  --panel:#2a2b38;
+  --accent:#ffeba7;
+  --accent-dark:#e6c700;
+  --ink:#102770;
+  --text:#c4c3ca;
+  --table-stripe:#242433;
+  --table-hover:#2e2f3b;
+  --violet:#102770;
+}
+
+*{ box-sizing:border-box; }
+body.theme-dark{
+  background:var(--bg);
+  color:var(--text);
+  font-family:'Poppins',sans-serif;
+  font-weight:300;
+  font-size:15px;
+  line-height:1.7;
+  min-height:100dvh;
+  display:flex;
+  flex-direction:column;
+}
+
+/* ===== Topbar ===== */
+.topbar{ background:#2a2b38; border-bottom:1px solid #343547; position:sticky; top:0; z-index:1000; }
+.topbar .navbar-brand{ color:var(--accent); font-weight:700; text-decoration:none; }
+.btn-logout{
+  border:1px solid #e27b7b; color:#f0b4b4; background:transparent;
+  padding:6px 12px; border-radius:4px; font-weight:600;
+}
+.btn-logout:hover{ background:#3a1b1b; color:#f0b4b4; border-color:#3a1b1b; }
+
+/* ===== Panels & cards ===== */
+.panel{
+  background:var(--panel);
+  border:1px solid #343547;
+  border-radius:8px;
+}
+.card{
+  background:var(--panel);
+  border:1px solid #343547;
+  border-radius:16px;
+  padding:1.25rem;
+  box-shadow:0 10px 30px rgba(0,0,0,.25);
+}
+.card-header.table-head{
+  color:var(--accent);
+  font-weight:bold;
+  background:transparent;
+  border-bottom:1px solid #343547;
+}
+
+/* ===== Buttons ===== */
+.btn{
+  border-radius:8px;
+  height:auto;
+  padding:.7rem 1.1rem;
+  font-size:14px;
+  font-weight:600;
+  text-transform:uppercase;
+  letter-spacing:.5px;
+  box-shadow:0 8px 24px 0 rgba(255,235,167,.06);
+  border:none;
+  cursor:pointer;
+}
+.btn:disabled,
+.btn[disabled]{ opacity:.5; cursor:not-allowed; }
+
+.btn-accent{ background:var(--accent); color:var(--ink); }
+.btn-accent:hover{ background:var(--ink); color:var(--accent); box-shadow:0 8px 24px 0 rgba(16,39,112,.2); }
+
+/* Ghost (unificado) */
+.btn-ghost{
+  background:transparent;
+  border:1px solid var(--accent);
+  color:var(--accent);
+  font-family:'Poppins',sans-serif;
+  letter-spacing:.5px;
+  transition:all 200ms linear;
+  padding:10px 16px;
+  border-radius:10px;
+}
+.btn-ghost:hover{ background:var(--accent); color:var(--ink); box-shadow:0 8px 24px 0 rgba(16,39,112,.25); }
+.btn-ghost.warn{ border-color:#ffc107; color:#ffc107; }
+.btn-ghost.warn:hover{ background:#ffc107; color:var(--ink); }
+.btn-ghost.info{ border-color:#6ea8fe; color:#6ea8fe; }
+.btn-ghost.info:hover{ background:#6ea8fe; color:var(--ink); }
+
+/* Botones IA más visibles */
+#btn-forecast,#btn-advice{
+  font-size:16px; font-weight:700; text-transform:uppercase; letter-spacing:.6px;
+}
+#btn-forecast:hover{ color:#6ea8fe; }
+#btn-advice:hover{ color:#ffc107; }
+
+/* ===== Focus visible (accesibilidad) ===== */
+a:focus-visible, button:focus-visible, .btn:focus-visible, select:focus-visible{
+  outline:2px solid var(--accent);
+  outline-offset:2px;
+  box-shadow:0 0 0 3px rgba(255,235,167,.2);
+}
+
+/* ===== Tabla oscura ===== */
+.table-dark{
+  --bs-table-bg: var(--panel);
+  --bs-table-striped-bg: var(--table-stripe);
+  --bs-table-striped-color: var(--text);
+  --bs-table-hover-bg: var(--table-hover);
+  --bs-table-hover-color: var(--text);
+  color:var(--text);
+}
+.custom-table thead tr{ background:var(--violet); }
+.custom-table thead th{ color:var(--accent); border:0; }
+
+/* Thead sticky + alto máx para no crecer infinito */
+.table-responsive{ max-height:420px; }
+.custom-table thead th{
+  position:sticky; top:0; z-index:1;
+  background:var(--violet);
+}
+
+/* ===== Texto de tarjetas (forecast/advice) ===== */
+#forecast,#advice{ color:#fff; }
+#forecast li,#advice li{ color:#e0e0e0; }
+#forecast b,#advice b{ color:#6ea8fe; }
+
+/* ===== Alertas (coherente con auth) ===== */
+.custom-alert{ border-radius:8px; border:0; }
+.alert-success{ background:#183a1f; color:#b4f0bd; }
+.alert-danger { background:#3a1b1b; color:#f0b4b4; }
+.alert-warning{ background:#3a341b; color:#f3e4b0; }
+.alert-info   { background:#1b2f3a; color:#b4e0f0; }
+
+/* ===== Emergency overlay ===== */
+.alert-overlay{
+  position:fixed; inset:0; background:rgba(0,0,0,.85);
+  display:none; align-items:center; justify-content:center; z-index:9999;
+  backdrop-filter:saturate(120%) blur(1px);
+}
+.alert-overlay.show{ display:flex; }
+.alert-card{
+  max-width:860px; width:min(92vw,860px);
+  margin:0 1rem; background:#0f1623;
+  border:2px solid #ff4d4f; color:#fff; border-radius:16px;
+  padding:24px; text-align:center; box-shadow:0 0 30px rgba(255,77,79,.6)
+}
+.alert-title{ font-size:1.6rem; font-weight:700; letter-spacing:.5px; }
+.alert-msg{ font-size:1.1rem; margin:.5rem 0 1rem; max-height:40vh; overflow:auto; text-align:left; white-space:pre-wrap; line-height:1.35; }
+.alert-actions{ display:flex; gap:.5rem; justify-content:center; flex-wrap:wrap; }
+.btn-alert{ border:0; border-radius:12px; padding:.6rem 1rem; font-weight:600; }
+.btn-ack{ background:#ff4d4f; color:#fff; }
+.btn-ack:hover{ background:#ff3033; }
+.btn-silence{ background:#222c3d; color:#cfd7e2; }
+.alert-pulse{ animation:pulseGlow 1s infinite; }
+@keyframes pulseGlow{
+  0%{ box-shadow:0 0 0 0 rgba(255,77,79,.7) }
+  70%{ box-shadow:0 0 0 25px rgba(255,77,79,0) }
+  100%{ box-shadow:0 0 0 0 rgba(255,77,79,0) }
+}
+@media (prefers-reduced-motion: reduce){ .alert-pulse{ animation:none } }
+
+/* ===== Chart container ===== */
+#chartHistory{ min-height:110px; }
+
+/* ===== Utilidades en dark ===== */
+.text-muted{ color:#9aa3b2 !important; }
+hr{ border-color:#343547; }
+::-webkit-scrollbar{ height:10px; width:10px; }
+::-webkit-scrollbar-thumb{ background:#3a3b48; border-radius:8px; }
+::-webkit-scrollbar-track{ background:#23242f; }
+
+/* ===== Extra layout para el portafolio ===== */
+.container{ width:min(1100px, 92vw); margin:0 auto; padding:1.2rem; }
+.hero{ display:grid; grid-template-columns:1fr; gap:1.2rem; align-items:center; }
+.hero img{ width:140px; height:140px; border-radius:50%; object-fit:cover; border:3px solid var(--accent); }
+.hero .title{ font-size:2rem; font-weight:800; color:var(--accent); line-height:1.1; }
+.hero .subtitle{ color:#b9c2d0; }
+@media (min-width:720px){
+  .hero{ grid-template-columns:160px 1fr; }
+  .hero .title{ font-size:2.4rem; }
+}
+
+.navbar{ display:flex; justify-content:space-between; align-items:center; gap:1rem; padding:.8rem 1rem; }
+.nav-links{ display:flex; gap:.6rem; flex-wrap:wrap; }
+.nav-links a{
+  color:#d6dbef; text-decoration:none; padding:.45rem .75rem; border-radius:10px; border:1px solid transparent;
+}
+.nav-links a:hover, .nav-links a.active{ border-color:var(--accent); color:var(--accent); }
+
+.grid{ display:grid; gap:1rem; grid-template-columns:1fr; }
+@media (min-width:720px){ .grid{ grid-template-columns:repeat(2,1fr); } }
+@media (min-width:1024px){ .grid{ grid-template-columns:repeat(3,1fr); } }
+
+.badge{ display:inline-block; border:1px solid #3b3f55; padding:.35rem .6rem; border-radius:999px; font-size:.85rem; margin:.2rem .25rem 0 0; }
+.badge.accent{ border-color:var(--accent); color:var(--accent); }
+.section-title{ font-size:1.2rem; color:var(--accent); font-weight:700; margin:1.2rem 0 .6rem; letter-spacing:.6px; text-transform:uppercase; }
+
+footer{ margin-top:auto; padding:1.2rem; border-top:1px solid #343547; background:#242535; text-align:center; color:#aeb7c7; }
+footer a{ color:var(--accent); text-decoration:none; }
+
+.hr-soft{ border:0; height:1px; background:linear-gradient(90deg, transparent, #343547, transparent); margin:1rem 0; }
+
+/* === Overlay de emergencia: mejoras para muchas alertas (ya incluido arriba) === */
+
+/* ======= Mejora responsive general ======= */
+.actions{
+  display:flex; flex-wrap:wrap; gap:.6rem; margin-top:.6rem;
+}
+.actions .btn{ flex:1 1 180px; }
+
+/* Ajustes tipografía y avatar en móviles */
+@media (max-width:720px){
+  .hero img{ width:110px; height:110px; }
+  .hero .title{ font-size:1.8rem; }
+  .navbar{ gap:.6rem; }
+  .nav-links{ row-gap:.4rem; }
+}
+
+/* Que los “chips” y botones nunca se peguen al borde */
+.container{ padding:1rem; }
+.badge{ margin-right:.35rem; margin-bottom:.35rem; }
+
+/* Grids más fluidos */
+.grid{ grid-template-columns:1fr; }
+@media (min-width:680px){ .grid{ grid-template-columns:repeat(2,1fr); } }
+@media (min-width:1024px){ .grid{ grid-template-columns:repeat(3,1fr); } }
+
+/* Nav: que no rompa en pantallas chicas */
+.nav-links{ display:flex; flex-wrap:wrap; gap:.5rem; }
+.nav-links a{ padding:.4rem .7rem; }
+
+/* Botones principales más “tap-friendly” en móvil */
+.btn{ padding:.8rem 1.1rem; border-radius:12px; }
+
+/* Hero: corrige saltos raros en wrap */
+.hero .subtitle{ margin-bottom:.4rem; }
+
+/* ====== CV / Tipografía y layout ====== */
+.prose p{ margin:.5rem 0; }
+.prose ul{ margin:.4rem 0 .8rem 1.2rem; }
+.prose li{ margin:.25rem 0; }
+
+.cv-twocol{
+  display:grid; gap:1rem; grid-template-columns:1fr;
+}
+@media (min-width:900px){
+  .cv-twocol{ grid-template-columns:320px 1fr; }
+}
+.cv-sidebar .avatar{
+  width:100%; max-width:240px; border-radius:12px; display:block;
+  border:3px solid var(--accent); margin:0 auto 1rem auto; object-fit:cover;
+}
+.cv-label{ font-weight:700; color:var(--accent); margin:.6rem 0 .2rem; }
+.cv-item{ padding:1rem; border:1px solid #343547; border-radius:12px; background:#242535; }
+.cv-item + .cv-item{ margin-top:.8rem; }
+
+/* Tableta/móvil: botones del hero apilados */
+.actions{ display:flex; flex-wrap:wrap; gap:.6rem; margin-top:.6rem; }
+.actions .btn{ flex:1 1 180px; }
